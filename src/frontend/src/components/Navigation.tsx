@@ -60,9 +60,9 @@ export function Navigation() {
             className="flex items-center"
           >
             <img
-              src="/assets/generated/halloway-logo-transparent.dim_600x200.png"
+              src="/assets/uploads/file_00000000cec47208b29fac17ba0e227d-1.png"
               alt={brand.name}
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </button>
 
