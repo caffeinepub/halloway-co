@@ -1,3 +1,4 @@
+import { brand } from "@/config/brand";
 import { collections } from "@/config/collections";
 import { motion } from "motion/react";
 
@@ -76,21 +77,18 @@ export function CollectionsSection() {
                   {collection.description}
                 </p>
                 <div className="pt-2">
-                  <button
-                    type="button"
+                  <a
+                    href={`https://wa.me/${brand.phone1.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-ocid={`collections.view.button.${index + 1}`}
                     className="group/link inline-flex items-center gap-2 text-gold text-sm tracking-widest uppercase font-sans hover:gap-3 transition-all duration-200"
-                    onClick={() => {
-                      document
-                        .getElementById("contact")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
                   >
-                    View Collection
+                    Contact us for info
                     <span className="transition-transform duration-200 group-hover/link:translate-x-1">
                       →
                     </span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.article>
