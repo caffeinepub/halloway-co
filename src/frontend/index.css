@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Halloway & Co — Design Tokens */
+/* Deep matte navy + warm cream + rich gold */
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Background: deep matte navy */
+    --background: 0.18 0.025 245;
+    /* Foreground: warm cream */
+    --foreground: 0.94 0.025 85;
+
+    /* Card: slightly lighter navy */
+    --card: 0.21 0.028 245;
+    --card-foreground: 0.94 0.025 85;
+
+    /* Popover */
+    --popover: 0.18 0.025 245;
+    --popover-foreground: 0.94 0.025 85;
+
+    /* Primary: rich gold */
+    --primary: 0.72 0.14 80;
+    --primary-foreground: 0.14 0.02 245;
+
+    /* Secondary: muted navy */
+    --secondary: 0.25 0.03 245;
+    --secondary-foreground: 0.94 0.025 85;
+
+    /* Muted */
+    --muted: 0.22 0.025 245;
+    --muted-foreground: 0.65 0.02 85;
+
+    /* Accent: gold highlight */
+    --accent: 0.72 0.14 80;
+    --accent-foreground: 0.14 0.02 245;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border */
+    --border: 0.30 0.03 245;
+    --input: 0.25 0.028 245;
+    --ring: 0.72 0.14 80;
+
+    /* Charts */
+    --chart-1: 0.72 0.14 80;
+    --chart-2: 0.94 0.025 85;
+    --chart-3: 0.50 0.08 245;
+    --chart-4: 0.65 0.10 80;
+    --chart-5: 0.40 0.05 245;
+
+    /* Sidebar */
+    --sidebar: 0.15 0.02 245;
+    --sidebar-foreground: 0.94 0.025 85;
+    --sidebar-primary: 0.72 0.14 80;
+    --sidebar-primary-foreground: 0.14 0.02 245;
+    --sidebar-accent: 0.22 0.025 245;
+    --sidebar-accent-foreground: 0.94 0.025 85;
+    --sidebar-border: 0.30 0.03 245;
+    --sidebar-ring: 0.72 0.14 80;
+
+    /* Brand custom tokens */
+    --gold: 0.72 0.14 80;
+    --gold-light: 0.82 0.12 82;
+    --gold-dark: 0.55 0.12 75;
+    --cream: 0.94 0.025 85;
+    --cream-muted: 0.72 0.02 85;
+    --navy: 0.18 0.025 245;
+    --navy-light: 0.22 0.028 245;
+    --navy-mid: 0.25 0.03 245;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Grain texture overlay */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Gold rule line */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(0.72 0.14 80), transparent);
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: oklch(0.72 0.14 80);
+  margin: 0 auto;
+}
+
+/* Halloway serif heading style */
+.heading-display {
+  font-family: "Instrument Serif", "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, oklch(0.82 0.12 82), oklch(0.72 0.14 80), oklch(0.55 0.12 75));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Nav link hover gold underline */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: oklch(0.72 0.14 80);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Gold border card */
+.gold-frame {
+  border: 1px solid oklch(0.72 0.14 80 / 0.4);
+}
+
+/* Collection card hover effect */
+.collection-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.collection-card:hover {
+  transform: translateY(-8px);
+}
+.collection-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.18 0.025 245);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.72 0.14 80 / 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.72 0.14 80);
+}
