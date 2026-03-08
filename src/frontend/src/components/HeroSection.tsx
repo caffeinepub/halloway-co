@@ -39,11 +39,12 @@ export function HeroSection({ onExploreClick }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-col items-center gap-2 mb-6"
         >
-          {/* EST label */}
-          <p className="text-gold text-xs tracking-[0.4em] uppercase font-sans mb-6">
-            Est. 2024
-          </p>
+          {/* Brand badge */}
+          <span className="inline-block border border-gold/40 px-4 py-1 text-gold text-xs tracking-[0.4em] uppercase font-sans bg-navy/40 backdrop-blur-sm">
+            Clothing Brand · Est. 2024
+          </span>
         </motion.div>
 
         <motion.h1
@@ -52,18 +53,26 @@ export function HeroSection({ onExploreClick }: HeroSectionProps) {
           transition={{ duration: 1, delay: 0.4 }}
           className="heading-display text-5xl md:text-7xl lg:text-8xl text-cream mb-6"
         >
-          Where Heritage
-          <br />
-          <span className="text-gold-gradient">Meets the Street</span>
+          Halloway & Co
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-cream/70 text-lg md:text-xl font-sans tracking-wide mb-12 max-w-xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="text-gold text-sm md:text-base tracking-[0.3em] uppercase font-sans mb-4"
         >
-          Halloway & Co — Redefining luxury for a new generation
+          Where Heritage Meets the Street
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-cream/70 text-base md:text-lg font-sans tracking-wide mb-12 max-w-xl mx-auto leading-relaxed"
+        >
+          Premium Old Money & Streetwear fashion — curated collections that
+          carry legacy and edge for the modern generation.
         </motion.p>
 
         {/* Gold divider */}

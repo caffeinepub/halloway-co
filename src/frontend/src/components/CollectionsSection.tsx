@@ -78,7 +78,7 @@ export function CollectionsSection() {
                 </p>
                 <div className="pt-2">
                   <a
-                    href={`https://wa.me/${brand.phone1.replace(/\D/g, "")}`}
+                    href={`https://wa.me/${brand.phone1.replace(/\D/g, "")}?text=${encodeURIComponent(collection.whatsappMessage)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-ocid={`collections.view.button.${index + 1}`}
