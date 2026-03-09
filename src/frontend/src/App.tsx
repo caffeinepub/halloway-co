@@ -1,3 +1,4 @@
+import { AIAgent } from "@/components/AIAgent";
 import { AboutSection } from "@/components/AboutSection";
 import { CollectionsSection } from "@/components/CollectionsSection";
 import { ContactSection } from "@/components/ContactSection";
@@ -25,6 +26,7 @@ export default function App() {
 
       <Footer />
       <Toaster position="bottom-right" theme="dark" />
+      <AIAgent />
     </div>
   );
 }
