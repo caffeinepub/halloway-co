@@ -10,15 +10,9 @@ import { useState } from "react";
 const contactItems = [
   {
     icon: Phone,
-    label: "Phone",
+    label: "WhatsApp / Phone",
     value: brand.phone1,
-    href: `tel:${brand.phone1.replace(/\s/g, "")}`,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: brand.phone2,
-    href: `tel:${brand.phone2}`,
+    href: `https://wa.me/${brand.phone1.replace(/\D/g, "")}`,
   },
   {
     icon: Mail,
@@ -115,6 +109,12 @@ export function ContactSection() {
                 <motion.a
                   key={`${item.label}-${index}`}
                   href={item.href}
+                  target={item.href.startsWith("https") ? "_blank" : undefined}
+                  rel={
+                    item.href.startsWith("https")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   data-ocid={`contact.item.${index + 1}`}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
